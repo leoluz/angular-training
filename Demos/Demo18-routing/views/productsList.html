@@ -1,0 +1,11 @@
+<store-display show-pictures="storeCtrl.showPictures" display-limit="storeCtrl.displayLimit"></store-display>
+
+<div ng-show="storeCtrl.isBusy">Loading...</div>
+
+<div ng-repeat="product in storeCtrl.data.products | limitTo:storeCtrl.displayLimit | orderBy:'-price'"
+     class="productList"
+     ng-class="{discontinued:product.discontinued}">
+
+    <a ng-href="#/product/{{ product.id }}">{{ product.name }}</a>
+
+</div>

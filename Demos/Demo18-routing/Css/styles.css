@@ -1,0 +1,31 @@
+body, input, button, label, textarea, select, option {
+    font-size: 24px;
+    font-family: arial;
+}
+
+.discontinued {
+    color:red;
+}
+.error-msg {
+    color:red;
+}
+.ng-invalid.ng-dirty {
+    border-color: red;
+}
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+.has-error {
+    border-color: red;
+    background-color: #FA787E;
+}
+
+.productList a:link,
+.productList a:visited {
+    color:#fff;
+    text-decoration:none;
+}
+.productList a:hover {
+    color:#fff;
+    text-decoration:underline;
+}

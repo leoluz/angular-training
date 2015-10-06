@@ -1,0 +1,9 @@
+<h1>{{product.name}}</h1>
+<p>{{product.price | currency:'$':2}}</p>
+<p>{{product.description | lowercase}}</p>
+<p>{{product.modifiedDate | date:'MMMM dd, yyyy h:mma':'en-CA'}}</p>
+<img ng-src="{{product.imageUrl}}" ng-show="store.showPictures" class="fade" width="200px" alt="" /><br>
+<button ng-click="increasePrice(product)"
+        ng-disabled="product.fixedPrice">
+    Price +10%
+</button>

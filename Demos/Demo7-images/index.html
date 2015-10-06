@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="store">
+<head>
+    <title>AngularJS Demo</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body ng-controller="StoreController as store" ng-init="displayLimit=5">
+
+    <section>
+        Display:
+        <button type="button" ng-click="displayLimit = displayLimit - 1">-</button>
+        <ng-pluralize count="displayLimit"
+                      when="{'0': 'no product','1': '{} product','other': '{} products'}">
+        </ng-pluralize>
+        <button type="button" ng-click="displayLimit = displayLimit + 1">+</button>
+        <label><input type="checkbox" ng-model="store.showPictures" />Images ?</label>
+    </section>
+
+    <div ng-repeat="product in store.products | limitTo:displayLimit | orderBy:'-price'"
+         ng-class="{discontinued:product.discontinued}">
+        <h1>{{product.name}}</h1>
+        <p>{{product.price | currency:'$':2}}</p>
+        <p>{{product.description}}</p>
+        <p>{{product.modifiedDate | date:'MMMM dd, yyyy h:mma':'en-CA'}}</p>
+        <img ng-src="{{product.imageUrl}}" ng-show="store.showPictures" width="200px" alt="" /><br>
+        <button ng-click="product.price = product.price * 1.1"
+                ng-disabled="product.fixedPrice">
+            Price +10%
+        </button>
+        <hr />
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+

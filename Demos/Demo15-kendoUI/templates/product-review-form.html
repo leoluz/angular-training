@@ -1,0 +1,35 @@
+<form name="reviewForm"
+      ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+    <fieldset ng-hide="reviewForm.$pristine" class="fade">
+        <legend>Live preview</legend>
+        <b>{{reviewCtrl.review.stars | decorate:'':'*'}}</b>
+        {{reviewCtrl.review.comment | decorate:'"':'"'}}
+        <cite>{{reviewCtrl.review.author}}</cite>
+    </fieldset>
+    <fieldset>
+        <legend>Write a review</legend>
+        <label>Rating:</label>
+        
+        <input kendo-slider="" ng-model="reviewCtrl.review.stars"          
+        k-tooltip="{ enabled: true }" k-min="1" k-max="5" style="left: 25px; bottom: 0; width: 270px;"></input>
+        <ng-messages for="reviewForm.stars.$error">
+            <div ng-messages-include="messages/validation-messages.html"></div>
+        </ng-messages><br /> 
+        
+        <label>Comment:</label><br />
+        <textarea name="comment" ng-model="reviewCtrl.review.comment" required ng-model-options="{ updateOn: 'blur' }"></textarea>
+        <ng-messages for="reviewForm.comment.$error">
+            <div ng-messages-include="messages/validation-messages.html"></div>
+        </ng-messages><br /> 
+        
+        <label>Email:</label>
+        <input type="email" name="author" ng-model="reviewCtrl.review.author" required minlength="6" />
+        <ng-messages for="reviewForm.author.$error">
+            <div ng-messages-include="messages/validation-messages.html"></div>
+        </ng-messages><br />  
+        <br />        
+        
+        <button type="submit" ng-disabled="!reviewForm.$valid">Submit</button>
+        <button type="reset" ng-click="reviewCtrl.reset()">Reset</button>
+    </fieldset>
+</form>

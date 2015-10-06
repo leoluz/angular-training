@@ -1,0 +1,39 @@
+<form name="reviewForm"
+      ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+    <fieldset ng-hide="reviewForm.$pristine" class="fade">
+        <legend>Live preview</legend>
+        <b>{{reviewCtrl.review.stars}}*</b>
+        "{{reviewCtrl.review.comment}}"
+        <cite>{{reviewCtrl.review.author}}</cite>
+    </fieldset>
+    <fieldset>
+        <legend>Write a review</legend>
+        <label>Rating:</label>
+        <select name="stars" ng-model="reviewCtrl.review.stars" required>
+            <option value="1">*</option>
+            <option value="2">**</option>
+            <option value="3">***</option>
+            <option value="4">****</option>
+            <option value="5">*****</option>
+        </select>
+        <ng-messages for="reviewForm.stars.$error">
+            <div ng-messages-include="messages/validation-messages.html"></div>
+        </ng-messages><br /> 
+        
+        <label>Comment:</label><br />
+        <textarea name="comment" ng-model="reviewCtrl.review.comment" required ng-model-options="{ updateOn: 'blur' }"></textarea>
+        <ng-messages for="reviewForm.comment.$error">
+            <div ng-messages-include="messages/validation-messages.html"></div>
+        </ng-messages><br /> 
+        
+        <label>Email:</label>
+        <input type="email" name="author" ng-model="reviewCtrl.review.author" required minlength="6" />
+        <ng-messages for="reviewForm.author.$error">
+            <div ng-messages-include="messages/validation-messages.html"></div>
+        </ng-messages><br />  
+        <br />        
+        
+        <button type="submit" ng-disabled="!reviewForm.$valid">Submit</button>
+        <button type="reset" ng-click="reviewCtrl.reset()">Reset</button>
+    </fieldset>
+</form>

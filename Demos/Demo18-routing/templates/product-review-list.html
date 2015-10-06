@@ -1,0 +1,6 @@
+<span ng-show="reviewListCtrl.reviews.length > 0">User reviews:</span>
+<blockquote ng-repeat="review in reviewListCtrl.reviews">
+    <b>{{review.stars}}*</b> ({{review.postedDate | date:'short'}})<br />
+    "{{review.comment}}"
+    <cite>{{review.author}}</cite>
+</blockquote>

@@ -1,0 +1,29 @@
+<store-display></store-display>
+
+<div ng-show="storeCtrl.isBusy">Loading...</div>
+
+<div ng-repeat="product in storeCtrl.products | limitTo:storeCtrl.displayLimit | orderBy:'-price'"
+     class="productList"
+     ng-class="{discontinued:product.discontinued}">
+
+    <a ng-href="#/product/{{ product.id }}">{{ ::product.name }}</a>
+    <a href ng-click="storeCtrl.deleteProduct(product)">X</a>
+</div>
+
+<p>
+    <a href="#/contact">Contact</a>
+    <hr />
+    
+    <form ng-submit="storeCtrl.addProduct()">
+       <fieldset><legend>New Product:</legend>
+           <label>Name:</label>
+            <input type="text" ng-model="storeCtrl.newProduct.name">
+            <br />
+           <label>Price:</label>
+            <input type="text" ng-model="storeCtrl.newProduct.price">
+            <br />
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    
+</p>

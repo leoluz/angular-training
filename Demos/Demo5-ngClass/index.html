@@ -1,0 +1,27 @@
+﻿   
+    <!DOCTYPE html>
+    <html ng-app="store">
+    <head>
+        <title>AngularJS Demo</title>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body ng-controller="StoreController as store">
+        <div ng-repeat="product in store.products"
+             ng-class="{discontinued:product.discontinued}">
+            <h1>{{product.name}}</h1>
+            <p>${{product.price}}</p>
+            <p>{{product.description}}</p>
+            <button ng-click="product.price = product.price * 1.1"
+                    ng-disabled="product.fixedPrice">
+                Price +10%
+            </button>
+            <hr />
+        </div>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+
+
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-controller="StoreController as store"
+         ng-hide="store.product.discontinued">
+        <h1>{{store.product.name}}</h1>
+        <p>${{store.product.price}}</p>
+        <p>{{store.product.description}}</p>
+        <button ng-click="store.product.price = store.product.price * 1.1"
+                ng-disabled="store.product.fixedPrice">
+            Price +10%
+        </button>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

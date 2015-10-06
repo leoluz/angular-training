@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+    <title>AngularJS Demo</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body >
+    <h1>Store Demo</h1>
+    <div ng-controller="StoreController as store" ng-cloak>
+        <h1>{{store.product.name}}</h1>
+        <p>${{store.product.price}}</p>
+        <p>{{store.product.description}}</p>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

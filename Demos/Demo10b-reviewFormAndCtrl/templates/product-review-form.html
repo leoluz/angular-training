@@ -1,0 +1,26 @@
+<form name="reviewForm"
+      ng-submit="reviewCtrl.addReview(product)">
+    <fieldset>
+        <legend>Write a review</legend>
+        <label>Rating:</label>
+        <select name="stars" ng-model="reviewCtrl.review.stars">
+            <option value="1">*</option>
+            <option value="2">**</option>
+            <option value="3">***</option>
+            <option value="4">****</option>
+            <option value="5">*****</option>
+        </select>
+        <br />
+        
+        <label>Comment:</label><br />
+        <textarea name="comment" ng-model="reviewCtrl.review.comment"></textarea>
+        <br />
+        
+        <label>Email:</label>
+        <input type="email" name="author" ng-model="reviewCtrl.review.author" />
+        <br />        
+        
+        <button type="submit">Submit</button>
+        <button type="reset" ng-click="reviewCtrl.reset()">Reset</button>
+    </fieldset>
+</form>

@@ -1,0 +1,17 @@
+<store-display></store-display>
+
+<div ng-show="storeCtrl.isBusy">Loading...</div>
+
+<div ng-repeat="product in storeCtrl.products | limitTo:storeCtrl.displayLimit | orderBy:'-price'"
+     class="productList"
+     ng-class="{discontinued:product.discontinued}">
+
+    <a ng-href="#/product/{{ product.id }}">{{ ::product.name }}</a>
+    
+    <button ng-click="storeCtrl.removeProduct(product.id)">X</button>
+
+</div>
+
+<p>
+    <a href ng-click="storeCtrl.newProduct()">New product</a> / <a href="#/contact">Contact</a>
+</p>

@@ -1,0 +1,65 @@
+[
+    {
+        "id":  1,
+        "name": "Trek SSL 2016",
+        "price": 799.9,
+        "modifiedDate": "2015-04-19",
+        "description": "Racing bike.",
+        "fixedPrice": true,
+        "discontinued": true,
+        "imageUrl": "img/trek.jpg",
+        "reviews": [ ]
+    },
+    {
+        "id":  2,
+        "name": "City XT 2015",
+        "price": 659.5,
+        "modifiedDate": "2015-03-01",
+        "description": "City bike.",
+        "fixedPrice": false,
+        "discontinued": false,
+        "imageUrl": "img/city.jpg",
+        "reviews": [
+            {
+                "stars": 5,
+                "postedDate": "2015-03-26T19:15",
+                "comment": "yes!",
+                "author": "me@gmail.com"
+
+            }
+        ]
+    },
+    {
+        "id":  3,
+        "name": "Cosmic Cobat 2015",
+        "price": 499.9,
+        "modifiedDate": "2015-05-17",
+        "description": "Great bike.",
+        "fixedPrice": false,
+        "discontinued": false,
+        "imageUrl": "img/cosmic-cobat.jpg",
+        "reviews": [ ]
+    },
+    {
+        "id":  4,
+        "name": "Hero DTB 2016",
+        "price": 759,
+        "modifiedDate": "2015-05-19",
+        "description": "Champion bike.",
+        "fixedPrice": false,
+        "discontinued": false,
+        "imageUrl": "img/hero-dtb.jpg",
+        "reviews": [ ]
+    },
+    {
+        "id":  5,
+        "name": "S-WORKS 2016",
+        "price": 1299.9,
+        "modifiedDate": "2015-06-17",
+        "description": "Ultra bike.",
+        "fixedPrice": false,
+        "discontinued": false,
+        "imageUrl": "img/s-works.jpg",
+        "reviews": [ ]
+    }
+]

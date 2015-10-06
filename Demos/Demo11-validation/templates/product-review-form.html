@@ -1,0 +1,26 @@
+<form name="reviewForm"
+      ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+    <fieldset>
+        <legend>Write a review</legend>
+        <label>Rating:</label>
+        <select name="stars" ng-model="reviewCtrl.review.stars" required>
+            <option value="1">*</option>
+            <option value="2">**</option>
+            <option value="3">***</option>
+            <option value="4">****</option>
+            <option value="5">*****</option>
+        </select>
+        <span ng-show="reviewForm.stars.$invalid && reviewForm.stars.$dirty" class="error-msg ">Invalid!</span><br />
+        
+        <label>Comment:</label><br />
+        <textarea name="comment" ng-model="reviewCtrl.review.comment" minlength="5" required></textarea>
+        <span ng-show="reviewForm.comment.$invalid && reviewForm.comment.$dirty" class="error-msg ">Invalid!</span><br />
+        
+        <label>Email:</label>
+        <input type="email" name="author" ng-model="reviewCtrl.review.author" minlength="6" required />
+        <span ng-show="reviewForm.author.$invalid && reviewForm.author.$dirty" class="error-msg ">Invalid!</span><br />        
+        
+        <button type="submit" ng-disabled="!reviewForm.$valid">Submit</button>
+        <button type="reset" ng-click="reviewCtrl.reset()">Reset</button>
+    </fieldset>
+</form>

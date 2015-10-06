@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+    <title>AngularJS Demo</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="animations.css" rel="stylesheet" />
+</head>
+<body ng-controller="StoreController as store">
+
+    <store-display></store-display>
+
+    <div class="productList"
+         ng-repeat="product in store.products | limitTo:displayLimit | orderBy:'-price'">
+        <product-details></product-details>
+    </div>
+
+    <script src="angular.min.js"></script>
+    <script src="angular-animate.min.js"></script>
+    <script src="app.js"></script>
+    <script src="store/store.controller.js"></script>
+    <script src="store/productDetails.directive.js"></script>
+    <script src="store/storeDisplay.directive.js"></script>
+</body>
+</html>
+
+
+
+
